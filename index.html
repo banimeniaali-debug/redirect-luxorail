@@ -1,16 +1,58 @@
 <!DOCTYPE html>
 <html lang="he">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="refresh" content="0; url=https://luxora-il.com/">
-  <title>מעביר...</title>
-  <script>
-    window.location.replace("https://luxora-il.com/");
-  </script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Luxora IL</title>
+
+<style>
+body{
+    margin:0;
+    background:#000;
+    color:#d4af37;
+    font-family:Arial, sans-serif;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    text-align:center;
+}
+.box{
+    max-width:400px;
+}
+.logo{
+    font-size:28px;
+    font-weight:bold;
+    margin-bottom:20px;
+}
+.timer{
+    font-size:20px;
+    margin-top:10px;
+}
+</style>
+
+<script>
+let seconds = 3;
+function countdown(){
+    document.getElementById("count").innerHTML = seconds;
+    seconds--;
+    if(seconds < 0){
+        window.location.href = "https://luxora-il.com/";
+    } else {
+        setTimeout(countdown,1000);
+    }
+}
+window.onload = countdown;
+</script>
+
 </head>
 <body>
-  <p>אם לא הועברת אוטומטית, לחץ כאן:
-     <a href="https://luxora-il.com/">luxora-il.com</a>
-  </p>
+
+<div class="box">
+    <div class="logo">LUXORA IL</div>
+    <div>מעבירים אותך לחנות היוקרה שלנו</div>
+    <div class="timer">מעבר בעוד <span id="count">3</span> שניות...</div>
+</div>
+
 </body>
 </html>
